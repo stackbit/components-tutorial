@@ -29,7 +29,35 @@ models:
         name: sections
         label: Sections
         items:
+          type: model
+          models: [section_cta, section_cards]
+  section_cta:
+    type: object
+    label: Call to Action
+    fields:
+      - type: string
+        name: title
+        label: Title
+        required: true
+      - type: string
+        name: subtitle
+        label: Subtitle
+        required: true
+      - type: list
+        name: actions
+        label: Actions
+        items:
           type: string
-        default:
-          - section 1
-          - section 2
+  section_cards:
+    type: object
+    label: Card Gallery
+    fields:
+      - type: string
+        name: title
+        label: Title
+        required: true
+      - type: list
+        name: cards
+        label: Cards
+        items:
+          type: string
