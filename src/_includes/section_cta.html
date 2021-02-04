@@ -3,7 +3,7 @@
   <div>{{ include.section.subtitle }}</div>
   <div class="actions grdGrid -middle -center">
     {%- for current_action in include.section.actions -%}
-      <div class="action">{{ current_action }}</div>
+      {%- include action.html action=current_action -%}
     {%- endfor -%}
   </div>
 </section>

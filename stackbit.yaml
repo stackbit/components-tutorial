@@ -47,7 +47,8 @@ models:
         name: actions
         label: Actions
         items:
-          type: string
+          type: model
+          models: [action]
   section_cards:
     type: object
     label: Card Gallery
@@ -60,4 +61,33 @@ models:
         name: cards
         label: Cards
         items:
-          type: string
+          type: model
+          models: [card]
+  action:
+    type: object
+    label: Action
+    fields:
+      - type: string
+        name: text
+        label: Text
+        required: true
+      - type: string
+        name: url
+        label: URL
+        required: true
+  card:
+    type: object
+    label: Card
+    fields:
+      - type: string
+        name: image
+        label: Image URL
+        required: true
+      - type: string
+        name: title
+        label: Title
+        required: true
+      - type: string
+        name: excerpt
+        label: Excerpt
+        required: true
