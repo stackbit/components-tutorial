@@ -9,6 +9,7 @@ layout: base
 </header>
 <main>
   {%- for current_section in page.sections -%}
-    <section class="phase1">{{ current_section }}</section>
+    {%- capture section_type -%}{{ current_section.type }}.html{%- endcapture -%}
+    {%- include {{ section_type }} section=current_section -%}
   {%- endfor -%}
 </main>
